@@ -1,0 +1,65 @@
+---
+
+# generator config
+generator:
+  # delay randomly when a image generated, unit: second
+  random_delay:
+    min: 5
+    max: 30
+
+  # retry times on error
+  retries: 3
+  # retry delay on error, unit: second
+  retry_delay: 60
+
+  # output directory
+  output: "output/"
+
+novelai_api:
+  token: "YOUR_TOKEN"
+  api: "https://api.novelai.net/ai/generate-image"
+  model: nai-diffusion-3
+
+  request_headers:
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+    "Referer": "https://novelai.net"
+
+  request_body_parameters:
+    width: 832
+    height: 1216
+    scale: 5
+    sampler: k_euler
+    steps: 28
+    # -1 means random
+    seed: -1
+    n_samples: 1
+    ucPreset: 0
+    qualityToggle: true
+    sm: false
+    sm_dyn: false
+    dynamic_thresholding: false
+    controlnet_strength: 1
+    legacy: false
+    add_original_image: false
+    uncond_scale: 1
+    cfg_resacle: 1
+    noise_schedule: native
+    # negative_prompt: 
+
+proxy:
+  # http: http://127.0.0.1
+  # https: https://127.0.0.1
+
+prompt:
+  # Postive prompt file
+  prompt_file: "prompts.yml"
+
+  # will be inserted into each positive prompt as a prefix
+  prompt_prefix: 
+    - amazing quality
+    - absurdres
+    - masterpiece
+
+  negative_prompts:
+    - nsfw
+

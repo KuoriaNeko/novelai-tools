@@ -1,0 +1,11 @@
+---
+- prompt: test prompt, test prompt2, test prompt3
+  negative_prompt: neg test1, neg test2
+  # Default to true
+  inherit_global_prompt: true
+  inherit_global_negative_prompt: true
+  images_num: 25
+
+- prompt: test prompt, test prompt2, test prompt3
+  negative_prompt: neg test1, neg test2
+  images_num: 25
